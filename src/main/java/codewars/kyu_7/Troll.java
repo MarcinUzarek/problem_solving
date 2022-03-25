@@ -23,7 +23,7 @@ public class Troll {
                 disemvowel("\"Stewardesses\" is the longest word that is typed with only the left hand."));
     }
 
-    public static String disemvowel(String str) {
+    private static String disemvowel(String str) {
         List<String> vowels = Arrays.asList("a", "e", "i", "o", "u");
 
         for (String vowel : vowels) {
