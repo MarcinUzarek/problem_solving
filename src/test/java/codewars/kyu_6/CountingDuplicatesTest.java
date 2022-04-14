@@ -22,7 +22,7 @@ class CountingDuplicatesTest {
     @Test
     void should_return_5_when_5_signs_duplicates() {
         //given
-        String string = "Aaabb3333KKfdfjk";
+        String string = "Aaabb3333Kkfdfj";
 
         //when
         var result = CountingDuplicates.duplicateCount(string);
