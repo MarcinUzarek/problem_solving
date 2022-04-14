@@ -14,7 +14,7 @@ public class ListFiltering {
         System.out.println(filterList(Arrays.asList(new Object[]{1, 2, 74, "daf", 8, "a", "b",})));
     }
 
-    private static List<Object> filterList(final List<Object> list) {
+     static List<Object> filterList(final List<Object> list) {
 
         return list.stream().filter(o -> o instanceof Integer)
                 .collect(Collectors.toList());

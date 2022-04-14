@@ -4,10 +4,8 @@ package codewars.kyu_6;
 // For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram,
 // because it uses the letters A-Z at least once (case is irrelevant).
 
-//        Given a string, detect whether or not it is a pangram.
+//        Given a string, detect whether it is a pangram.
 //        Return True if it is, False if not. Ignore numbers and punctuation.
-
-import java.net.Socket;
 
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.toList;
@@ -15,7 +13,6 @@ import static java.util.stream.Collectors.toList;
 public class PangramChecker {
 
     public static void main(String[] args) {
-
         System.out.println(check("The quick brown fox jumps over the lazy dog.!@#$%"));
     }
 

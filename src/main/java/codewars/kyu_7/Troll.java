@@ -2,8 +2,6 @@ package codewars.kyu_7;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 //Trolls are attacking your comment section!
 //
@@ -23,7 +21,7 @@ public class Troll {
                 disemvowel("\"Stewardesses\" is the longest word that is typed with only the left hand."));
     }
 
-    private static String disemvowel(String str) {
+     static String disemvowel(String str) {
         List<String> vowels = Arrays.asList("a", "e", "i", "o", "u");
 
         for (String vowel : vowels) {
