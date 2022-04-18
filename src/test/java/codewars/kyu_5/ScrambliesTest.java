@@ -6,9 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ScrambliesTest {
 
-    private static void testing(boolean actual, boolean expected) {
-        assertEquals(expected, actual);
-    }
 
     @Test
     void should_return_true_if_has_all_letters() {
