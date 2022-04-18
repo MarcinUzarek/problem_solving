@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IsMyFriendCheatingTest {
@@ -19,9 +21,12 @@ public class IsMyFriendCheatingTest {
         //when
         List<long[]> actual = IsMyFriendCheating.removNb(26);
 
+        System.out.println(expected);
+
         //then
-        assertEquals(expected, actual);
+        assertThat(actual, contains(expected.toArray()));
     }
+
 
     @Test
     void should_return_empty_list_if_no_exclusions_found() {
@@ -29,7 +34,7 @@ public class IsMyFriendCheatingTest {
         List<long[]> expected = Collections.emptyList();
 
         //when
-        List<long[]> actual = IsMyFriendCheating.removNb(2);
+        List<long[]> actual = IsMyFriendCheating.removNb(3);
 
         //then
         assertEquals(expected, actual);
