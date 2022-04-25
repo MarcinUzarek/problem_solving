@@ -16,19 +16,19 @@ class NumberZooPatrolTest {
 
     @Test
     void should_return_correct_number_border_cases() {
-        assertEquals(1, NumberZooPatrol.findMissingNumber(new int[]{3, 4, 5, 6, 7}));
+        assertEquals(1, NumberZooPatrol.findMissingNumber(new int[]{3, 4, 5, 6, 7, 2}));
         assertEquals(5, NumberZooPatrol.findMissingNumber(new int[]{1, 3, 2, 4}));
     }
 
     @Test
-    @Timeout(5)
-    void should_work_fast_for_big_data() {
-        int[] bigArray = new int[99999];
+    @Timeout(1)
+    void should_work_fast_for_bigger_data() {
+        int[] bigArray = new int[999999];
 
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i + 1;
         }
-        bigArray[10] = 100000;
+        bigArray[10] = 1000000;
 
         assertEquals(11, NumberZooPatrol.findMissingNumber(bigArray));
     }
