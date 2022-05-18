@@ -1,4 +1,4 @@
-package google_foobar;
+package google_foobar.level_1;
 
 import java.util.Arrays;
 import java.util.HashSet;

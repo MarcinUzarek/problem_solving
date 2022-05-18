@@ -1,8 +1,8 @@
-package google_foobar;
+package google_foobar.level_1;
 
 import org.junit.jupiter.api.Test;
 
-import static google_foobar.ListDifference.solution;
+import static google_foobar.level_1.ListDifference.solution;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
