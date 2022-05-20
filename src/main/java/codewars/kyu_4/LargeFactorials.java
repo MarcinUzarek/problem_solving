@@ -12,5 +12,26 @@ package codewars.kyu_4;
 //
 //        For more on factorials, see http://en.wikipedia.org/wiki/Factorial
 
+import java.math.BigInteger;
+
 public class LargeFactorials {
+
+    public static void main(String[] args) {
+
+        System.out.println(factorial(119));
+    }
+
+    public static String factorial(int n) {
+
+        if (n < 0) {
+            return null;
+        }
+
+        BigInteger result = BigInteger.valueOf(1);
+        for (int i = 1; i <= n; i++) {
+            result = result.multiply(BigInteger.valueOf(i));
+        }
+
+        return String.valueOf(result);
+    }
 }

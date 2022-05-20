@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class LargeFactorialsTest {
 
@@ -13,15 +14,26 @@ class LargeFactorialsTest {
 
         var result = LargeFactorials.factorial(-4);
 
-        assertThat(result, is(null));
+        assertNull(result);
     }
 
     @Test
-    void should_return_1_for_given_0(){
+    void should_return_1_for_given_0() {
 
         var result = LargeFactorials.factorial(0);
 
         assertThat(result, is("1"));
+    }
+
+    @Test
+    void should_work_for_huge_numbers() {
+        var expected = "55745857612076058813234317117419771556272886109483581752463927935846" +
+                "946310374691578057284710599874844234646982443450754604453404911734348832487" +
+                "342619913750049708004343808000000000000000000000000000";
+
+        var actual = LargeFactorials.factorial(119);
+
+        assertThat(actual, is(expected));
     }
 
     @Test
