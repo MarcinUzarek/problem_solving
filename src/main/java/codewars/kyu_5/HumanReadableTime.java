@@ -11,8 +11,19 @@ package codewars.kyu_5;
 
 public class HumanReadableTime {
 
+    public static void main(String[] args) {
+
+        System.out.println(makeReadable(86399));
+        System.out.println(86399 % 60);
+
+    }
+
     public static String makeReadable(int seconds) {
-        // Do something
-        return null;
+
+        int hours = seconds / 3600;
+        int minutes = seconds % 3600 / 60;
+        int secs = seconds % 60;
+
+        return String.format("%02d:%02d:%02d", hours, minutes, secs);
     }
 }
