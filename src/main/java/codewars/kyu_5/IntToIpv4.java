@@ -21,7 +21,54 @@ package codewars.kyu_5;
 
 public class IntToIpv4 {
 
-    public static String longToIP(long ip) {
-        return "";
+    public static void main(String[] args) {
+        System.out.println(longToIP(3232235521L));
+        System.out.println(longToIpSmartSolution(3232235521L));
+    }
+
+    //smarter solution
+    public static String longToIpSmartSolution(long ip) {
+
+        long fourthOctet = ip % 256;
+        long thirdOctet = (ip / 256) % 256;
+        long secondOctet = (ip / (256 * 256)) % 256;
+        long firstOctet = (ip / (256 * 256 * 256)) % 256;
+        return firstOctet + "." + secondOctet + "." + thirdOctet + "." + fourthOctet;
+    }
+
+    //complex solution
+    public static String longToIP(long num) {
+
+        String binaryOfNum = decimalToBinary(num);
+        return
+                binaryOctetToDecimal(binaryOfNum.substring(0, 8)) + "." +
+                        binaryOctetToDecimal(binaryOfNum.substring(8, 16)) + "." +
+                        binaryOctetToDecimal(binaryOfNum.substring(16, 24)) + "." +
+                        binaryOctetToDecimal(binaryOfNum.substring(24, 32));
+
+    }
+
+    private static String decimalToBinary(long num) {
+        StringBuilder binaryOfNum = new StringBuilder("");
+
+        for (int i = 31; i >= 0; i--) {
+            if (num / Math.pow(2, i) >= 1) {
+                num = (long) (num % Math.pow(2, i));
+                binaryOfNum.append(1);
+            } else {
+                binaryOfNum.append(0);
+            }
+        }
+        return binaryOfNum.toString();
+    }
+
+    private static int binaryOctetToDecimal(String num) {
+        int result = 0;
+        for (int i = 0; i <= 7; i++) {
+            if (num.charAt(i) == '1') {
+                result += Math.pow(2, num.length() - i - 1);
+            }
+        }
+        return result;
     }
 }
