@@ -17,14 +17,14 @@ class ChessKnightTest {
         assertThat(answer, is(0));
     }
 
-    @Test
-    void should_return_correct_numbers_of_moves_in_shortest_path() {
-        assertThat(ChessKnight.answer(1, 18), is(1));
-        assertThat(ChessKnight.answer(19, 26), is(1));
-        assertThat(ChessKnight.answer(7, 12), is(2));
-        assertThat(ChessKnight.answer(0, 1), is(3));
-        assertThat(ChessKnight.answer(1, 34), is(3));
-        assertThat(ChessKnight.answer(0, 63), is(7));
-    }
+//    @Test
+//    void should_return_correct_numbers_of_moves_in_shortest_path() {
+//        assertThat(ChessKnight.answer(1, 18), is(1));
+//        assertThat(ChessKnight.answer(19, 26), is(1));
+//        assertThat(ChessKnight.answer(7, 12), is(2));
+//        assertThat(ChessKnight.answer(0, 1), is(3));
+//        assertThat(ChessKnight.answer(1, 34), is(3));
+//        assertThat(ChessKnight.answer(0, 63), is(7));
+//    }
 
 }
