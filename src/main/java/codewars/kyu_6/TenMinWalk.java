@@ -17,7 +17,21 @@ package codewars.kyu_6;
 public class TenMinWalk {
 
     public static boolean isValid(char[] walk) {
-        // Insert brilliant code here
-        return true;
+
+        int n = 0;
+        int e = 0;
+        int s = 0;
+        int w = 0;
+
+        for (char step : walk) {
+
+            switch (step) {
+                case 'n' -> n++;
+                case 's' -> s++;
+                case 'e' -> e++;
+                case 'w' -> w++;
+            }
+        }
+        return n == s && e == w && n + e + s + w == 10;
     }
 }
