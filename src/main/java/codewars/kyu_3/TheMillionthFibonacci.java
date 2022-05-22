@@ -28,19 +28,18 @@ package codewars.kyu_3;
 //
 //        Your algorithm must output the exact integer answer, to full precision. Also, it must correctly handle negative numbers as input.
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class TheMillionthFibonacci {
 
     public static void main(String[] args) {
 
-//        fib(BigInteger.valueOf(15000));
-//        System.out.println(countFiboOfPositiveWithFormula(2450));
+        System.out.println(fib(BigInteger.valueOf(999999)));
     }
 
     //slow for numbers > ~ 1 000 000
     //complexity O(n)
+    //TODO: complexity Olog(n)
     public static BigInteger fib(BigInteger n) {
 
         if (n.equals(BigInteger.ZERO)) {
@@ -55,32 +54,6 @@ public class TheMillionthFibonacci {
             return countFiboOfPositive(n.abs());
         }
     }
-
-    //////////////////////////////////////////////////
-
-    //complexity Olog(n)
-    //solution based on mathematical formula for the nth term of the Fibonacci sequence
-    public static BigInteger fibLogN() {
-//
-//        an = [Phin – (phi)n] / Sqrt[5].
-//                where Phi = (1 + Sqrt[5]) / 2 is the so-called golden mean, and
-        return null;
-    }
-
-    private static BigInteger countFiboOfPositiveWithFormula(Integer n) {
-
-        double PHI = (1 + Math.sqrt(5)) / 2;
-        double phi = (1 - Math.sqrt(5)) / 2;
-
-
-        var divide = (BigDecimal.valueOf(
-                Math.pow(PHI, n.longValue())).
-                subtract(BigDecimal.valueOf(Math.pow(phi, n.longValue())))).
-                divide(BigDecimal.valueOf(Math.sqrt(5)));
-        System.out.println(divide);
-        return null;
-    }
-
 
     private static BigInteger countFiboOfPositive(BigInteger n) {
         BigInteger temp;
