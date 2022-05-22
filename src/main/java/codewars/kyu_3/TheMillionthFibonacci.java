@@ -28,21 +28,19 @@ package codewars.kyu_3;
 //
 //        Your algorithm must output the exact integer answer, to full precision. Also, it must correctly handle negative numbers as input.
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.stream.IntStream;
 
 public class TheMillionthFibonacci {
 
     public static void main(String[] args) {
 
-
-        fib(BigInteger.valueOf(150000));
-
-
-
+//        fib(BigInteger.valueOf(15000));
+//        System.out.println(countFiboOfPositiveWithFormula(2450));
     }
 
-//slow for numbers > ~ 1 000 000
+    //slow for numbers > ~ 1 000 000
+    //complexity O(n)
     public static BigInteger fib(BigInteger n) {
 
         if (n.equals(BigInteger.ZERO)) {
@@ -50,15 +48,37 @@ public class TheMillionthFibonacci {
         }
         if (n.compareTo(BigInteger.ZERO) > 0) {
             return countFiboOfPositive(n);
-        }
-        else if (n.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
+        } else if (n.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
             n = n.negate();
             return countFiboOfPositive(n).negate();
-        }
-        else {
+        } else {
             return countFiboOfPositive(n.abs());
         }
+    }
 
+    //////////////////////////////////////////////////
+
+    //complexity Olog(n)
+    //solution based on mathematical formula for the nth term of the Fibonacci sequence
+    public static BigInteger fibLogN() {
+//
+//        an = [Phin – (phi)n] / Sqrt[5].
+//                where Phi = (1 + Sqrt[5]) / 2 is the so-called golden mean, and
+        return null;
+    }
+
+    private static BigInteger countFiboOfPositiveWithFormula(Integer n) {
+
+        double PHI = (1 + Math.sqrt(5)) / 2;
+        double phi = (1 - Math.sqrt(5)) / 2;
+
+
+        var divide = (BigDecimal.valueOf(
+                Math.pow(PHI, n.longValue())).
+                subtract(BigDecimal.valueOf(Math.pow(phi, n.longValue())))).
+                divide(BigDecimal.valueOf(Math.sqrt(5)));
+        System.out.println(divide);
+        return null;
     }
 
 
