@@ -13,16 +13,39 @@ package codewars.kyu_4;
 //        * Your function should return ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
 //        The order of the permutations doesn't matter.
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
+//TODO: fix this shitty solution to something normal
 public class Permutations {
 
     public static void main(String[] args) {
+        System.out.println(singlePermutations("abccef"));
 
     }
 
     public static List<String> singlePermutations(String s) {
-        // Your code here!
-        return null;
+
+        if (s.length() == 0) {
+            return Collections.emptyList();
+        }
+
+        var charList = Arrays.stream(s.split(""))
+                .collect(Collectors.toList());
+        Set<String> placeHolder = new HashSet<>();
+
+        for (int i = 0; i < 1000000; i++) {
+            StringBuilder stringBuffer = new StringBuilder();
+            Collections.shuffle(charList);
+
+            for (String letter : charList) {
+                stringBuffer.append(letter);
+            }
+            placeHolder.add(stringBuffer.toString());
+        }
+        return new ArrayList<>(placeHolder).stream().sorted().toList();
+
     }
+
+
 }
