@@ -22,8 +22,15 @@ class SortTheOddTest {
         assertArrayEquals(new int[]{1, 3, 5, 8, 0},
                 SortTheOdd.sortArray(new int[]{5, 3, 1, 8, 0}));
 
-        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
-                SortTheOdd.sortArray(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}));
+        assertArrayEquals(new int[]{0, 1, 8, 3, 6, 5, 4, 7, 2, 9},
+                SortTheOdd.sortArray(new int[]{0, 9, 8, 7, 6, 5, 4, 3, 2, 1}));
     }
 
+
+    @Test
+    void should_sort_correctly_with_negative_numbers() {
+        assertArrayEquals(new int[]{-27, 32, -9, -6, 2, -3, 3},
+                SortTheOdd.sortArray(new int[]{-9, 32, -3, -6, 2, 3, -27}));
+    }
 }
+
