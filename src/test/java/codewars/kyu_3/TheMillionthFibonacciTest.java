@@ -24,7 +24,7 @@ class TheMillionthFibonacciTest {
     @Timeout(1)
     void should_work_fast_for_astronomical_numbers() {
         //this number is over 30 000 digits long
-        System.out.println(fib(BigInteger.valueOf(150000)));
+       fib(BigInteger.valueOf(150000));
     }
 
     @Test
