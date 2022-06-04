@@ -17,4 +17,9 @@ class BreakCamelCaseTest {
         assertEquals("camel Casing Test", BreakCamelCase.camelCase("camelCasingTest"));
     }
 
+    @Test
+    void should_return_empty_string() {
+        assertEquals("", BreakCamelCase.camelCase(""));
+    }
+
 }
