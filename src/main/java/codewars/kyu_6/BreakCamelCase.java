@@ -9,7 +9,17 @@ package codewars.kyu_6;
 
 public class BreakCamelCase {
 
+    public static void main(String[] args) {
+        System.out.println(camelCase("camelCasingTest"));
+    }
+
     public static String camelCase(String input) {
-        return null;
+        String result = "";
+        String upperCase = input.toUpperCase();
+
+        for (int i = 0; i < input.length(); i++) {
+            result = input.charAt(i) != upperCase.charAt(i) ? result + input.charAt(i) : result + " " + input.charAt(i);
+        }
+        return result;
     }
 }
