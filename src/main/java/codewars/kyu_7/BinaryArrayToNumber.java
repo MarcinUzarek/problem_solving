@@ -21,7 +21,11 @@ import java.util.List;
 public class BinaryArrayToNumber {
 
     public static int ConvertBinaryArrayToInt(List<Integer> binary) {
-        return 0;
+
+        StringBuilder stringBuilder = new StringBuilder("0");
+        binary.forEach(stringBuilder::append);
+        return Integer.parseInt(stringBuilder.toString(), 2);
+
     }
 
 }
