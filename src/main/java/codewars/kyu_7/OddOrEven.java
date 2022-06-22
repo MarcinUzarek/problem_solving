@@ -16,9 +16,12 @@ package codewars.kyu_7;
 //        Input: [0, -1, -5]
 //        Output: "even"
 
+import java.util.Arrays;
+
 public class OddOrEven {
 
     public static String oddOrEven (int[] array) {
-        // your code
+        var sum = Arrays.stream(array).sum();
+        return sum % 2 == 0 ? "even" : "odd";
     }
 }

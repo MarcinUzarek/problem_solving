@@ -12,7 +12,7 @@ class OddOrEvenTest {
     void should_return_even_for_empty_arr() {
         var result = OddOrEven.oddOrEven(new int[]{});
 
-        assertThat(result, is("Even"));
+        assertThat(result, is("even"));
     }
 
     @Test
