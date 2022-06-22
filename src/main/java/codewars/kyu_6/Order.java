@@ -14,6 +14,16 @@ package codewars.kyu_6;
 public class Order {
 
     public static String order(String words) {
-        // ...
+        String[] arr = words.split(" ");
+        StringBuilder result = new StringBuilder("");
+
+        for (int i = 0; i < arr.length + 1; i++) {
+            for (String s : arr) {
+                if (s.contains(String.valueOf(i))) {
+                    result.append(s).append(" ");
+                }
+            }
+        }
+        return result.toString().trim();
     }
 }
