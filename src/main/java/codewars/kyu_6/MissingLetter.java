@@ -17,9 +17,18 @@ package codewars.kyu_6;
 //        ["O","Q","R","S"] -> "P"
 //        (Use the English alphabet with 26 letters!)
 
+import java.util.stream.IntStream;
+
 public class MissingLetter {
 
+
     public static char findMissingLetter(char[] array) {
-        return ' ';
+        int sumOfGivenSequence = 0;
+        var sumOfFullSequence = IntStream.rangeClosed(array[0], array[array.length - 1]).sum();
+
+        for (char letter : array) {
+            sumOfGivenSequence += letter;
+        }
+        return (char) (sumOfFullSequence - sumOfGivenSequence);
     }
 }
