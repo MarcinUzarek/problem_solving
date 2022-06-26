@@ -10,10 +10,26 @@ package codewars.kyu_6;
 //
 //        All letters will be lowercase and all inputs will be valid.
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class HighestScoringWord {
 
     public static String high(String s) {
-        // Your code here...
-        return "";
+        var wordsScore = new LinkedHashMap<String, Integer>();
+        var words = s.split(" ");
+
+        for (String word : words) {
+            int score = 0;
+
+            //subtracting 96 because 'a' numerical representation is 97, 'b' = 98, 'c' = 99 etc..
+            //after subtracting 'a' is 1, 'b' is 2, 'c' is 3 etc...
+            for (int i = 0; i < word.length(); i++) {
+                score += word.charAt(i) - 96;
+            }
+            wordsScore.put(word, score);
+        }
+        return Collections.max(wordsScore.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 }

@@ -16,7 +16,7 @@ class HighestScoringWordTest {
     @Test
     public void should_return_first_appeared_word_when_score_equal() {
         assertEquals("aa", HighestScoringWord.high("aa b"));
-        assertEquals("b", HighestScoringWord.high("b aa"));
+        assertEquals("dd", HighestScoringWord.high("dd aaaaaaaa bbbb h"));
         assertEquals("d", HighestScoringWord.high("d bb"));
         assertEquals("aaa", HighestScoringWord.high("aaa b"));
     }
