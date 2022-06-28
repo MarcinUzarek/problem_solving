@@ -14,9 +14,18 @@ package codewars.kyu_8;
 //        If an empty value (null, None, Nothing etc.)
 //        is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
 
+import java.util.Arrays;
+
 public class SumWithoutHighestAndLowest {
 
     public static int sum(int[] numbers) {
-        return 0;
+
+        if (numbers == null || numbers.length < 3) {
+            return 0;
+        }
+
+        return Arrays.stream(numbers).sum()
+                - Arrays.stream(numbers).max().getAsInt() - Arrays.stream(numbers).min().getAsInt();
+
     }
 }
