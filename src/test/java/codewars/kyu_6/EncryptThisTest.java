@@ -20,7 +20,7 @@ class EncryptThisTest {
 
     @Test
     void should_return_empty_string_for_empty_input() {
-        assertEquals("", EncryptThis.encryptThis(""));
+        assertEquals(" ", EncryptThis.encryptThis(" "));
     }
 
     @Test
@@ -32,5 +32,4 @@ class EncryptThisTest {
     void should_return_ASCII_code_with_unchanged_letter_for_two_letter_word() {
         assertEquals("104e", EncryptThis.encryptThis("he"));
     }
-
 }
