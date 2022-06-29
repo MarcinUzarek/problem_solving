@@ -25,7 +25,19 @@ package codewars.kyu_6;
 public class BouncingBall {
 
     public static int bouncingBall(double h, double bounce, double window) {
-        // your code
-        return 0;
+        int bouncesSeen = -1;
+
+        if (!checkIfInputIsCorrect(h, bounce, window)) {
+            return -1;
+        }
+        while (h > window) {
+            h *= bounce;
+            bouncesSeen += 2;
+        }
+        return bouncesSeen;
+    }
+
+    private static boolean checkIfInputIsCorrect(double h, double bounce, double window) {
+        return bounce > 0 && bounce < 1 && window > 0 && h > window;
     }
 }
